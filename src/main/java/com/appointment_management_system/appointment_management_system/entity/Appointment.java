@@ -7,38 +7,30 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="`appointment_management`")
+@Table(name="`Appointment_management`")
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int appointment_id;
     @Column
     private int doctor_id;
     @Column
     private int patient_id;
-    @Column
-    private int receptionist_id;
     @Column
     private String appDate;
     @Column
     private String start_time;
     @Column
     private String end_time;
-    @Enumerated(EnumType.ORDINAL)
-    private Status status;
-    private enum Status{
-        scheduled,canceled,completed
-    }
     @Column
-    private String reason;
+    private String status;
 
-
-    public int getId() {
-        return id;
+    public int getAppointment_id() {
+        return appointment_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAppointment_id(int appointment_id) {
+        this.appointment_id = appointment_id;
     }
 
     public int getDoctor_id() {
@@ -57,20 +49,12 @@ public class Appointment {
         this.patient_id = patient_id;
     }
 
-    public int getReceptionist_id() {
-        return receptionist_id;
-    }
-
-    public void setReceptionist_id(int receptionist_id) {
-        this.receptionist_id = receptionist_id;
-    }
-
-    public String getDate() {
+    public String getAppDate() {
         return appDate;
     }
 
-    public void setDate(String date) {
-        this.appDate = date;
+    public void setAppDate(String appDate) {
+        this.appDate = appDate;
     }
 
     public String getStart_time() {
@@ -89,19 +73,13 @@ public class Appointment {
         this.end_time = end_time;
     }
 
-    public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    public Status getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(String status) {
         this.status = status;
     }
+
+
 }
