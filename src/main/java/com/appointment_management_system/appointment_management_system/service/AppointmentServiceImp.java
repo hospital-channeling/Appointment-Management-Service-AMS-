@@ -5,7 +5,8 @@ import com.appointment_management_system.appointment_management_system.entity.Ap
 import java.util.List;
 
 public interface AppointmentServiceImp {
-    Appointment createAppointment(Appointment appointment, String doctorName,String paitentName);
+
+    Appointment createAppointment(Appointment appointment);
     void deleteAppointment(int id);
 
     Appointment updateAppointment(int id,Appointment appointment);
