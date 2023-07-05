@@ -3,6 +3,7 @@ package com.appointment_management_system.appointment_management_system.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.Value;
 
 @Entity
 @NoArgsConstructor
@@ -11,19 +12,18 @@ import lombok.NoArgsConstructor;
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "appointment_id",nullable = false)
     private int appointment_id;
-    @Column
-    private int doctor_id;
-    @Column
-    private int patient_id;
-    @Column
+    @Column(name = "doctorName",nullable = false)
+    private String doctorName;
+    @Column(name = "patientName",nullable = false)
+    private String patientName;
+    @Column(name = "appDate", nullable = false)
     private String appDate;
-    @Column
-    private String start_time;
-    @Column
-    private String end_time;
-    @Column
-    private String status;
+    @Column(name = "timeSlots", nullable = false)
+    private String timeSlots;
+    @Column(name = "appStatus",nullable = false)
+    private String appStatus;
 
     public int getAppointment_id() {
         return appointment_id;
@@ -33,20 +33,20 @@ public class Appointment {
         this.appointment_id = appointment_id;
     }
 
-    public int getDoctor_id() {
-        return doctor_id;
+    public String getDoctorName() {
+        return doctorName;
     }
 
-    public void setDoctor_id(int doctor_id) {
-        this.doctor_id = doctor_id;
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
     }
 
-    public int getPatient_id() {
-        return patient_id;
+    public String getPatientName() {
+        return patientName;
     }
 
-    public void setPatient_id(int patient_id) {
-        this.patient_id = patient_id;
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
     }
 
     public String getAppDate() {
@@ -57,29 +57,22 @@ public class Appointment {
         this.appDate = appDate;
     }
 
-    public String getStart_time() {
-        return start_time;
+    public String getAppStatus() {
+        return appStatus;
     }
 
-    public void setStart_time(String start_time) {
-        this.start_time = start_time;
+    public void setAppStatus(String appStatus) {
+        this.appStatus = appStatus;
     }
 
-    public String getEnd_time() {
-        return end_time;
+    public String getTimeSlots() {
+        return timeSlots;
     }
 
-    public void setEnd_time(String end_time) {
-        this.end_time = end_time;
+    public void setTimeSlots(String timeSlots) {
+        this.timeSlots = timeSlots;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
 
 }
