@@ -8,20 +8,20 @@ import lombok.Value;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="`Appointment_management`")
+@Table(name="`appointment_management`")
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "appointment_id",nullable = false)
     private int appointment_id;
-    @Column(name = "doctorName",nullable = false)
-    private String doctorName;
+    @Column(name = "doctor_name",nullable = false)
+    private String doctor_name;
     @Column(name = "patientName",nullable = false)
-    private String patientName;
-    @Column(name = "appDate", nullable = false)
-    private String appDate;
-    @Column(name = "appStatus",nullable = false)
-    private String appStatus;
+    private String patient_name;
+    @Column(name = "app_date", nullable = false)
+    private String app_date;
+    @Column(name = "app_status",nullable = false)
+    private String app_status;
 
     public int getAppointment_id() {
         return appointment_id;
@@ -32,35 +32,35 @@ public class Appointment {
     }
 
     public String getDoctorName() {
-        return doctorName;
+        return doctor_name;
     }
 
     public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
+        this.doctor_name = doctorName;
     }
 
     public String getPatientName() {
-        return patientName;
+        return patient_name;
     }
 
     public void setPatientName(String patientName) {
-        this.patientName = patientName;
+        this.patient_name = patientName;
     }
 
     public String getAppDate() {
-        return appDate;
+        return app_date;
     }
 
     public void setAppDate(String appDate) {
-        this.appDate = appDate;
+        this.app_date = appDate;
     }
 
     public String getAppStatus() {
-        return appStatus;
+        return app_status;
     }
 
     public void setAppStatus(String appStatus) {
-        this.appStatus = appStatus;
+        this.app_status = appStatus;
     }
 
 }
