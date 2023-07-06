@@ -16,7 +16,7 @@ public class Appointment {
     private int appointment_id;
     @Column(name = "doctor_name",nullable = false)
     private String doctor_name;
-    @Column(name = "patientName",nullable = false)
+    @Column(name = "patient_name",nullable = false)
     private String patient_name;
     @Column(name = "app_date", nullable = false)
     private String app_date;

@@ -23,11 +23,6 @@ public class AppointmentController {
         return appointmentService.getAppointmentByID(id);
     }
 
-    @GetMapping("/appointmentgetbyname/{name}")
-    public Appointment getAppointmentByName(@PathVariable String name){
-        return appointmentService.getAppointmentByName(name);
-    }
-
     @GetMapping("/appointmentget")
     public List<Appointment> getAllAppointment(){
         return appointmentService.getAllAppointment();
@@ -64,7 +59,7 @@ public class AppointmentController {
     }
 
     private DoctorAvailabilityResponse checkDoctorAvailability(String doctorName, String appDate) {
-        String url = "http://doctor-service-url/availability?doctorName=" + doctorName + "&date=" + appDate;
+        String url = "http://localhost:8080/availability?doctorName=" + doctorName + "&date=" + appDate;
         return restTemplate.getForObject(url,DoctorAvailabilityResponse.class);
     }
 }

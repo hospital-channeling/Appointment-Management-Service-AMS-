@@ -60,8 +60,5 @@ public class AppointmentServiceImp implements IAppointmentService {
         return null;
     }
 
-    public Appointment getAppointmentByName(String name) {
-        return appointmentRepo.findByName(name);
-    }
 }
 
