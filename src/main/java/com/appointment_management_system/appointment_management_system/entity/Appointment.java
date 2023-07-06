@@ -18,6 +18,8 @@ public class Appointment {
     private String doctor_name;
     @Column(name = "patient_name",nullable = false)
     private String patient_name;
+    @Column(name = "patient_id", nullable = false)
+    private int patient_id;
     @Column(name = "app_date", nullable = false)
     private String app_date;
     @Column(name = "app_status",nullable = false)
@@ -47,6 +49,13 @@ public class Appointment {
         this.patient_name = patientName;
     }
 
+    public int getPatient_id() {
+        return patient_id;
+    }
+
+    public void setPatient_id(int patient_id) {
+        this.patient_id = patient_id;
+    }
     public String getAppDate() {
         return app_date;
     }
