@@ -36,8 +36,10 @@ public class AppointmentController {
     @PostMapping("/appointmentcreatecheck")
     public Appointment createAppointmentCheck(@RequestBody Appointment appointment) {
         //Check is the doctor is available for the requested date and time slot
-        DoctorAvailabilityResponse availabilityResponse = checkDoctorAvailability(appointment.getDoctorName(), appointment.getAppDate(), appointment.getTimeSlots());
+        DoctorAvailabilityResponse availabilityResponse = checkDoctorAvailability(appointment.getDoctorName(), appointment.getAppDate());
         if (availabilityResponse.isAvailable()) {
+            List<String> availableTimeSlots = availabilityResponse.getTimeSlots();
+            System.out.println("Available Time Slots: " + availableTimeSlots);
             appointment.setAppStatus("Not Confirmed");
             return appointmentService.createAppointment(appointment);
         }else{
@@ -56,8 +58,8 @@ public class AppointmentController {
         appointmentService.deleteAppointment(id);
     }
 
-    private DoctorAvailabilityResponse checkDoctorAvailability(String doctorName, String appDate, String timeSlots) {
-        String url = "http://doctor-service-url/availability?doctorName=" + doctorName + "&date=" + appDate + "&timeSlot=" + timeSlots;
+    private DoctorAvailabilityResponse checkDoctorAvailability(String doctorName, String appDate) {
+        String url = "http://doctor-service-url/availability?doctorName=" + doctorName + "&date=" + appDate;
         return restTemplate.getForObject(url,DoctorAvailabilityResponse.class);
     }
 }
