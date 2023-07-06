@@ -2,7 +2,7 @@ package com.appointment_management_system.appointment_management_system.controll
 
 import com.appointment_management_system.appointment_management_system.entity.Appointment;
 import com.appointment_management_system.appointment_management_system.entity.DoctorAvailabilityResponse;
-import com.appointment_management_system.appointment_management_system.service.AppointmentService;
+import com.appointment_management_system.appointment_management_system.service.AppointmentServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -15,7 +15,7 @@ import java.util.List;
 public class AppointmentController {
 
     @Autowired
-    private AppointmentService appointmentService;
+    private AppointmentServiceImp appointmentService;
     private RestTemplate restTemplate;
 
     @GetMapping("/appointmentgetbyid/{id}")
