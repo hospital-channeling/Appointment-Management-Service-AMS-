@@ -20,8 +20,6 @@ public class Appointment {
     private String patientName;
     @Column(name = "appDate", nullable = false)
     private String appDate;
-    @Column(name = "timeSlots", nullable = false)
-    private String timeSlots;
     @Column(name = "appStatus",nullable = false)
     private String appStatus;
 
@@ -64,15 +62,5 @@ public class Appointment {
     public void setAppStatus(String appStatus) {
         this.appStatus = appStatus;
     }
-
-    public String getTimeSlots() {
-        return timeSlots;
-    }
-
-    public void setTimeSlots(String timeSlots) {
-        this.timeSlots = timeSlots;
-    }
-
-
 
 }

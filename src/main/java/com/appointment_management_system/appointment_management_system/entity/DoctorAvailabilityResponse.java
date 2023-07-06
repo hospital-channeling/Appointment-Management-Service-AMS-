@@ -1,6 +1,12 @@
 package com.appointment_management_system.appointment_management_system.entity;
 
+import java.util.List;
+
 public class DoctorAvailabilityResponse {
+
+    private boolean available;
+    private List<String> timeSlots;
+    private String appDate;
     public boolean isAvailable() {
         return available;
     }
@@ -9,16 +15,13 @@ public class DoctorAvailabilityResponse {
         this.available = available;
     }
 
-    public String getTimeSlot() {
-        return timeSlot;
+    public List<String> getTimeSlots() {
+        return timeSlots;
     }
 
-    public void setTimeSlot(String timeSlot) {
-        this.timeSlot = timeSlot;
+    public void setTimeSlots(List<String> timeSlots) {
+        this.timeSlots = timeSlots;
     }
-
-    private boolean available;
-    private String timeSlot;
 
     public String getAppDate() {
         return appDate;
@@ -28,5 +31,4 @@ public class DoctorAvailabilityResponse {
         this.appDate = appDate;
     }
 
-    private String appDate;
 }

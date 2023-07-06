@@ -39,7 +39,6 @@ public class AppointmentService implements AppointmentServiceImp {
             updatedAppointment.setPatientName(appointment.getPatientName());
             updatedAppointment.setDoctorName(appointment.getDoctorName());
             updatedAppointment.setAppDate(appointment.getAppDate());
-            updatedAppointment.setTimeSlots(appointment.getTimeSlots());
             updatedAppointment.setAppStatus(appointment.getAppStatus());
         } else {
             System.out.println("No appointment found");
