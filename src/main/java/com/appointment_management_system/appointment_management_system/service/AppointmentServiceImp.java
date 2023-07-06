@@ -35,6 +35,7 @@ public class AppointmentServiceImp implements IAppointmentService {
         Appointment updatedAppointment = exsistingAppointment.get();
         if (exsistingAppointment.isPresent()) {
             updatedAppointment.setPatientName(appointment.getPatientName());
+            updatedAppointment.setPatient_id(appointment.getPatient_id());
             updatedAppointment.setDoctorName(appointment.getDoctorName());
             updatedAppointment.setAppDate(appointment.getAppDate());
             updatedAppointment.setAppStatus(appointment.getAppStatus());
